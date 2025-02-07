@@ -21,7 +21,7 @@ struct ImageSearchMainView: View {
             Text(Constants.Main.searchingTags + searchText)
                 // Add accaccessibility label for support
                 .accessibilityLabel(Constants.Accessibility.searchingTags)
-                .onChange(of: searchText) { _, newValue in
+                .onChange(of: searchText) { newValue in
                     // Cancel the previous parsing data process when search key changed
                     viewModel.cancel()
                     viewModel.getImageData(from: newValue)

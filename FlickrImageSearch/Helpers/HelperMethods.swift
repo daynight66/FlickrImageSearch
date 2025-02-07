@@ -34,6 +34,7 @@ extension String {
     }
 
     /// Find width value from the html format string
+    /// /// Input must contain width=\"\" to get value
     func findWidth() -> String? {
         let widthPattern = #"width=\"(\d+)\""#
 
@@ -48,6 +49,7 @@ extension String {
     }
 
     /// Find height value from the html format string
+    /// Input must contain height=\"\" to get value
     func findHeight() -> String? {
         let heightPattern = #"height=\"(\d+)\""#
 

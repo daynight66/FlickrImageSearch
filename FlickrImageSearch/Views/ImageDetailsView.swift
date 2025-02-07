@@ -26,6 +26,7 @@ struct ImageDetailsView: View {
 
                         HStack {
                             Text(Constants.Details.title)
+                                .accessibilityLabel(Constants.Accessibility.imageTitle)
                                 .fontWeight(.bold)
                                 .frame(width: 150, alignment: .leading)
                             Text(title)
@@ -39,6 +40,7 @@ struct ImageDetailsView: View {
 
                         HStack {
                             Text(Constants.Details.description)
+                                .accessibilityLabel(Constants.Accessibility.imageDescription)
                                 .fontWeight(.bold)
                                 .frame(width: 150, alignment: .leading)
                             NavigationLink(destination: ImageWebView(htmlContent: description)) {
@@ -54,6 +56,7 @@ struct ImageDetailsView: View {
 
                         HStack {
                             Text(Constants.Details.author)
+                                .accessibilityLabel(Constants.Accessibility.imageAuthor)
                                 .fontWeight(.bold)
                                 .frame(width: 150, alignment: .leading)
                             Text(author)
@@ -67,6 +70,7 @@ struct ImageDetailsView: View {
 
                         HStack {
                             Text(Constants.Details.publishedDate)
+                                .accessibilityLabel(Constants.Accessibility.imagePublishedDate)
                                 .fontWeight(.bold)
                                 .frame(width: 150, alignment: .leading)
                             Text(date)
@@ -80,6 +84,7 @@ struct ImageDetailsView: View {
 
                         HStack {
                             Text(Constants.Details.imageWidth)
+                                .accessibilityLabel(Constants.Accessibility.imageWidth)
                                 .fontWeight(.bold)
                                 .frame(width: 150, alignment: .leading)
                             Text(width)
@@ -93,6 +98,7 @@ struct ImageDetailsView: View {
 
                         HStack {
                             Text(Constants.Details.imageHeight)
+                                .accessibilityLabel(Constants.Accessibility.imageHeight)
                                 .fontWeight(.bold)
                                 .frame(width: 150, alignment: .leading)
                             Text(height)

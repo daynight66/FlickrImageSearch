@@ -19,6 +19,8 @@ struct ImageSearchMainView: View {
         // Make navigation flow
         NavigationStack {
             Text(Constants.Main.searchingTags + searchText)
+                // Add accaccessibility label for support
+                .accessibilityLabel(Constants.Accessibility.searchingTags)
                 .onChange(of: searchText) { _, newValue in
                     // Cancel the previous parsing data process when search key changed
                     viewModel.cancel()
@@ -33,6 +35,7 @@ struct ImageSearchMainView: View {
                     // Inform user no results found
                     if images.isEmpty && !searchText.isEmpty {
                         Text(Constants.Errors.noResultFound)
+                            .accessibilityLabel(Constants.Accessibility.noResultFound)
                             .bold()
                             .padding()
                     }
@@ -57,6 +60,7 @@ struct ImageSearchMainView: View {
             } else {
                 // Display error information when services are down
                 Text(Constants.Errors.sevicesDown)
+                    .accessibilityLabel(Constants.Accessibility.sevicesIssues)
                     .bold()
                     .padding()
             }

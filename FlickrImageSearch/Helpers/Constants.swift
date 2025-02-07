@@ -28,4 +28,16 @@ struct Constants {
         static let failFetchData = "Failed to fetch images: "
         static let dateNotValid = "Date not Valid"
     }
+
+    struct Accessibility {
+        static let searchingTags = "Searching tags"
+        static let noResultFound = "No Results Found"
+        static let sevicesIssues = "Service Issues"
+        static let imageTitle = "Image Title"
+        static let imageDescription = "Image Description"
+        static let imageAuthor = "Image Author"
+        static let imagePublishedDate = "Image Published Date"
+        static let imageWidth = "Image Width"
+        static let imageHeight = "Image Height"
+    }
 }

@@ -7,28 +7,60 @@ import XCTest
 @testable import FlickrImageSearch
 
 final class FlickrImageSearchTests: XCTestCase {
+    func testFormattedDate() {
+        // Given
+        let isoDateString = "2025-02-06T15:53:48Z"
 
-    override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+        // When
+        // Then
+        XCTAssertEqual(isoDateString.formattedDate(), "Feb 6, 2025")
     }
 
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+    func testFormattedDateFail() {
+        // Given
+        let failingIsoDateString = "2025-02-06"
+
+        // When
+        // Then
+        XCTAssertNil(failingIsoDateString.formattedDate())
     }
 
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-        // Any test you write for XCTest can be annotated as throws and async.
-        // Mark your test throws to produce an unexpected failure when your test encounters an uncaught error.
-        // Mark your test async to allow awaiting for asynchronous code to complete. Check the results with assertions afterwards.
+    func testFindAuthor() {
+        // Given
+        let author = "nobody@flickr.com (\"author\")"
+
+        // When
+        // Then
+        XCTAssertEqual(author.findAuthor(), "author")
     }
 
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
+    func testFindAuthorFail() {
+        // Given
+        let failingAuthor = "author"
+
+        // When
+        // Then
+        XCTAssertNil(failingAuthor.findAuthor())
     }
 
+    func testFindWidthAndHeight() {
+        // Given
+        let htmlString = "width=\"240\" height=\"180\""
+
+        // When
+        // Then
+        XCTAssertEqual(htmlString.findWidth(), "240")
+        XCTAssertEqual(htmlString.findHeight(), "180")
+    }
+
+    func testFindWidthAndHeightFail() {
+        // Given
+        let htmlString = "width=240 height=180"
+
+
+        // When
+        // Then
+        XCTAssertNil(htmlString.findWidth())
+        XCTAssertNil(htmlString.findHeight())
+    }
 }

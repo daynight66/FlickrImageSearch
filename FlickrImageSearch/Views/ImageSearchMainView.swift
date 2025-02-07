@@ -39,13 +39,16 @@ struct ImageSearchMainView: View {
                     // Add grid view to display images
                     LazyVGrid(columns: gridItems) {
                         ForEach(images, id: \.self) { imageData in
-                            // Dislay image, use AsyncImage to cache the image temporarily
-                            AsyncImage(url: URL(string: imageData.imageURL)) { image in
-                                image.resizable()
-                                    .aspectRatio(contentMode: .fit)
-                            } placeholder: {
-                                // Add progress indicator
-                                ProgressView()
+                            // Add navigation to the images
+                            NavigationLink(destination: ImageDetailsView(detailsModel: imageData.imageDetails)) {
+                                // Dislay image, use AsyncImage to cache the image temporarily
+                                AsyncImage(url: URL(string: imageData.imageURL)) { image in
+                                    image.resizable()
+                                        .aspectRatio(contentMode: .fit)
+                                } placeholder: {
+                                    // Add progress indicator
+                                    ProgressView()
+                                }
                             }
                         }
                         .padding()

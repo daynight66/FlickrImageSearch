@@ -17,6 +17,8 @@
 		F5924B092D565D720035A877 /* ImageSearchMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5924B082D565D720035A877 /* ImageSearchMainView.swift */; };
 		F5924B0C2D565F2E0035A877 /* ImageSearchMainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5924B0B2D565F2E0035A877 /* ImageSearchMainViewModel.swift */; };
 		F5924B0F2D565F810035A877 /* DataModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5924B0E2D565F810035A877 /* DataModels.swift */; };
+		F5924B112D5667AB0035A877 /* ImageDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5924B102D5667AB0035A877 /* ImageDetailsView.swift */; };
+		F5924B132D56682E0035A877 /* ImageWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5924B122D56682E0035A877 /* ImageWebView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +52,8 @@
 		F5924B082D565D720035A877 /* ImageSearchMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSearchMainView.swift; sourceTree = "<group>"; };
 		F5924B0B2D565F2E0035A877 /* ImageSearchMainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSearchMainViewModel.swift; sourceTree = "<group>"; };
 		F5924B0E2D565F810035A877 /* DataModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModels.swift; sourceTree = "<group>"; };
+		F5924B102D5667AB0035A877 /* ImageDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDetailsView.swift; sourceTree = "<group>"; };
+		F5924B122D56682E0035A877 /* ImageWebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageWebView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -140,6 +144,8 @@
 			isa = PBXGroup;
 			children = (
 				F5924B082D565D720035A877 /* ImageSearchMainView.swift */,
+				F5924B102D5667AB0035A877 /* ImageDetailsView.swift */,
+				F5924B122D56682E0035A877 /* ImageWebView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -291,6 +297,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				F5924AE02D565D000035A877 /* ContentView.swift in Sources */,
+				F5924B132D56682E0035A877 /* ImageWebView.swift in Sources */,
+				F5924B112D5667AB0035A877 /* ImageDetailsView.swift in Sources */,
 				F5924ADE2D565D000035A877 /* FlickrImageSearchApp.swift in Sources */,
 				F5924B0F2D565F810035A877 /* DataModels.swift in Sources */,
 				F5924B092D565D720035A877 /* ImageSearchMainView.swift in Sources */,

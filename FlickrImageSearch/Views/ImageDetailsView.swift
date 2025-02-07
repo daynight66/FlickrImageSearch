@@ -73,6 +73,32 @@ struct ImageDetailsView: View {
                                 .accessibilityLabel(date)
                         }
                     }
+
+                    // Display the width of the image if have
+                    if let width = detailsModel.width {
+                        Spacer(minLength: 16.0)
+
+                        HStack {
+                            Text(Constants.Details.imageWidth)
+                                .fontWeight(.bold)
+                                .frame(width: 150, alignment: .leading)
+                            Text(width)
+                                .accessibilityLabel(width)
+                        }
+                    }
+
+                    // Display the published data of the image if have
+                    if let height = detailsModel.height {
+                        Spacer(minLength: 16.0)
+
+                        HStack {
+                            Text(Constants.Details.imageHeight)
+                                .fontWeight(.bold)
+                                .frame(width: 150, alignment: .leading)
+                            Text(height)
+                                .accessibilityLabel(height)
+                        }
+                    }
                 }
                 .padding()
                 .navigationTitle(Constants.Details.imageDetails)

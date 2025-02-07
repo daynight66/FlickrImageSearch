@@ -65,7 +65,9 @@ final class ImageSearchViewModel: ObservableObject {
                                                                          title: $0.title,
                                                                          description: $0.description,
                                                                          author: $0.author?.findAuthor(),
-                                                                         date: $0.published?.formattedDate()))
+                                                                         date: $0.published?.formattedDate(),
+                                                                         width: $0.description?.findWidth(),
+                                                                         height: $0.description?.findHeight()))
             }
         }
         return images

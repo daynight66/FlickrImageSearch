@@ -17,6 +17,8 @@ struct Constants {
         static let moreInformation = "More Information"
         static let author = "Author"
         static let publishedDate = "Published Date"
+        static let imageWidth = "Image Width"
+        static let imageHeight = "Image Height"
         static let imageDetails = "Image Details"
     }
 

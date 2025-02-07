@@ -25,5 +25,7 @@ struct ImageDataModel: Decodable, Hashable {
         let description: String?
         let author: String?
         let date: String?
+        let width: String?
+        let height: String?
     }
 }

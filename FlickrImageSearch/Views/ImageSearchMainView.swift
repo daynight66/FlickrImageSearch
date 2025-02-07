@@ -18,13 +18,13 @@ struct ImageSearchMainView: View {
     var body: some View {
         // Make navigation flow
         NavigationStack {
-            Text("Searching: \(searchText)")
+            Text(Constants.Main.searchingTags + searchText)
                 .onChange(of: searchText) { _, newValue in
                     // Cancel the previous parsing data process when search key changed
                     viewModel.cancel()
                     viewModel.getImageData(from: newValue)
                 }
-                .navigationTitle("Flickr")
+                .navigationTitle(Constants.Main.filckrImage)
 
             // Optional binding to safely display images
             if let images = viewModel.images {
@@ -32,7 +32,7 @@ struct ImageSearchMainView: View {
                 ScrollView {
                     // Inform user no results found
                     if images.isEmpty && !searchText.isEmpty {
-                        Text("No Results Found")
+                        Text(Constants.Errors.noResultFound)
                             .bold()
                             .padding()
                     }
@@ -56,7 +56,7 @@ struct ImageSearchMainView: View {
                 }
             } else {
                 // Display error information when services are down
-                Text("There's something wrong with the services, please try again later.")
+                Text(Constants.Errors.sevicesDown)
                     .bold()
                     .padding()
             }

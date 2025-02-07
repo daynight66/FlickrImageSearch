@@ -25,7 +25,7 @@ struct ImageDetailsView: View {
                         Spacer(minLength: 16.0)
 
                         HStack {
-                            Text("Title")
+                            Text(Constants.Details.title)
                                 .fontWeight(.bold)
                                 .frame(width: 150, alignment: .leading)
                             Text(title)
@@ -38,11 +38,11 @@ struct ImageDetailsView: View {
                         Spacer(minLength: 16.0)
 
                         HStack {
-                            Text("Description")
+                            Text(Constants.Details.description)
                                 .fontWeight(.bold)
                                 .frame(width: 150, alignment: .leading)
                             NavigationLink(destination: ImageWebView(htmlContent: description)) {
-                                Text("more information")
+                                Text(Constants.Details.moreInformation)
                             }
 
                         }
@@ -53,7 +53,7 @@ struct ImageDetailsView: View {
                         Spacer(minLength: 16.0)
 
                         HStack {
-                            Text("Author")
+                            Text(Constants.Details.author)
                                 .fontWeight(.bold)
                                 .frame(width: 150, alignment: .leading)
                             Text(author)
@@ -66,7 +66,7 @@ struct ImageDetailsView: View {
                         Spacer(minLength: 16.0)
 
                         HStack {
-                            Text("Published Date")
+                            Text(Constants.Details.publishedDate)
                                 .fontWeight(.bold)
                                 .frame(width: 150, alignment: .leading)
                             Text(date)
@@ -75,7 +75,7 @@ struct ImageDetailsView: View {
                     }
                 }
                 .padding()
-                .navigationTitle("Image Details")
+                .navigationTitle(Constants.Details.imageDetails)
             }
         }
     }

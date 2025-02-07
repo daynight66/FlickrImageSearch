@@ -10,7 +10,7 @@ final class ImageSearchViewModel: ObservableObject {
     // make observable property to parse data after changed
     @Published var images: [ImageDataModel]? = []
 
-    private var dataURL = "https://api.flickr.com/services/feeds/photos_public.gne?format=json&nojsoncallback=1&tags="
+    private var dataURL = Constants.dataURL
     private var cancellable: AnyCancellable?
 
     // Add deinit func to stop unnecessary observations and prevent memory leaks
@@ -48,7 +48,7 @@ final class ImageSearchViewModel: ObservableObject {
                     // Display error message with user
                     self?.images = nil
                     // Find error in debug console if failed to fetch the data
-                    debugPrint("Failed to fetch images: " + "\(error)")
+                    debugPrint(Constants.Errors.failFetchData + "\(error)")
                 }
             }, receiveValue: { [weak self] response in
                 self?.images = self?.transformData(response: response)
@@ -64,8 +64,8 @@ final class ImageSearchViewModel: ObservableObject {
                                imageDetails: ImageDataModel.ImageDetails(imageURL: $0.media?.values.first ?? "",
                                                                          title: $0.title,
                                                                          description: $0.description,
-                                                                         author: $0.author,
-                                                                         date: $0.published))
+                                                                         author: $0.author?.findAuthor(),
+                                                                         date: $0.published?.formattedDate()))
             }
         }
         return images
